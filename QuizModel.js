@@ -1,4 +1,3 @@
-// =======================
 // QuizModel: Datenlogik
 // =======================
 class QuizModel {
@@ -17,7 +16,6 @@ class QuizModel {
         this.useExternal = false;
     }
 
-    // =======================
     // Quizdaten laden
     // =======================
     async fetchQuizzes(category) {
@@ -82,7 +80,6 @@ class QuizModel {
         this.reset();
     }
 
-    // =======================
     // Kategorietest (für extern geladene Fragen)
     // =======================
     isMatchingCategory(quiz, category) {
@@ -93,7 +90,6 @@ class QuizModel {
         return false;
     }
 
-    // =======================
     // Antwortoptionen mischen
     // =======================
     shuffleOptions(quiz) {
@@ -102,14 +98,12 @@ class QuizModel {
         quiz.correctIndex = quiz.options.indexOf(correctAnswer);
     }
 
-    // =======================
     // Allgemeines Array-Mischen
     // =======================
     shuffleArray(array) {
         return array.slice().sort(() => Math.random() - 0.5);
     }
 
-    // =======================
     // Zufällige IDs erzeugen
     // =======================
     generateRandomIds(min, max, count) {
@@ -120,7 +114,6 @@ class QuizModel {
         return Array.from(ids);
     }
 
-    // =======================
     // Quizzustand zurücksetzen
     // =======================
     reset() {
@@ -129,14 +122,12 @@ class QuizModel {
         this.wrongAnswers = 0;
     }
 
-    // =======================
     // Aktuelle Frage zurückgeben
     // =======================
     getCurrentQuiz() {
         return this.quizzes[this.currentQuizIndex];
     }
 
-    // =======================
     // Antwort auswerten
     // =======================
     submitAnswer(selectedOptionIndex) {
@@ -155,7 +146,6 @@ class QuizModel {
         return isCorrect;
     }
 
-    // =======================
     // Fortschritt des Nutzers abrufen
     // =======================
     getProgress() {

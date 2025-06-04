@@ -1,4 +1,4 @@
-// =======================
+
 // QuizPresenter: verbindet Model und View
 // =======================
 class QuizPresenter {
@@ -10,7 +10,6 @@ class QuizPresenter {
         this.view.bindSubmitButton(this.handleSubmit.bind(this));
     }
 
-    // =======================
     // Lädt Fragen einer bestimmten Kategorie
     // =======================
     async loadQuizzes(category) {
@@ -23,7 +22,6 @@ class QuizPresenter {
         this.renderQuiz();
     }
 
-    // =======================
     // Verarbeitet die Antwort nach Button-Klick
     // =======================
     handleSubmit() {
@@ -51,7 +49,6 @@ class QuizPresenter {
         }
     }
 
-    // =======================
     // Zeigt die aktuelle Frage an
     // =======================
     renderQuiz() {

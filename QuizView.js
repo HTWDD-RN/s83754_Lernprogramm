@@ -1,4 +1,3 @@
-// =======================
 // QuizView: Steuert die Anzeige im Browser
 // =======================
 class QuizView {
@@ -17,7 +16,6 @@ class QuizView {
         }
     }
 
-    // =======================
     // Zeigt eine Quizfrage mit Optionen an
     // =======================
     render(quiz) {
@@ -53,7 +51,6 @@ class QuizView {
         });
     }
 
-    // =======================
     // Stellt Text im Quiz dar (ggf. KaTeX für Mathe)
     // =======================
     renderQuizText(text, category, source, element) {
@@ -69,7 +66,6 @@ class QuizView {
         }
     }
 
-    // =======================
     // Gibt den Index der gewählten Option zurück
     // =======================
     getSelectedOption() {
@@ -77,21 +73,18 @@ class QuizView {
         return selectedOption ? parseInt(selectedOption.value) : null;
     }
 
-    // =======================
     // Zeigt ein Feedback (z. B. "Richtig!" oder "Falsch!")
     // =======================
     displayFeedback(message) {
         this.feedbackElement.innerHTML = message;
     }
 
-    // =======================
     // Verbindet den Submit-Button mit einer Funktion
     // =======================
     bindSubmitButton(handler) {
         this.submitButton.addEventListener('click', handler);
     }
 
-    // =======================
     // Zeigt Abschlussmeldung und beendet das Quiz-UI
     // =======================
     showCompletion(message) {
@@ -101,7 +94,6 @@ class QuizView {
         this.submitButton.style.display = 'none';
     }
 
-    // =======================
     // Aktualisiert den Fortschrittsbalken
     // =======================
     updateProgress(currentIndex, total) {
@@ -111,7 +103,6 @@ class QuizView {
         }
     }
 
-    // =======================
     // Setzt das UI zurück für neue Kategorie oder Quizstart
     // =======================
     resetUI() {

@@ -1,4 +1,3 @@
-// =======================
 // main.js: Initialisiert das Quiz und steuert UI-Events
 // =======================
 document.addEventListener('DOMContentLoaded', function () {
