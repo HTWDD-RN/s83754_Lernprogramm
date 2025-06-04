@@ -1,0 +1,16 @@
+{
+
+    "name": "Lernprogramm IT-Beleg",
+    
+    "short_name": "Lernprogramm",
+
+    "description": "A web-based quiz application for IT Beleg.",
+
+    "start_url": "/",
+
+    "display": "standalone",
+
+    "background_color": "#ffffff",
+
+    "theme_color": "#4a90e2"
+}

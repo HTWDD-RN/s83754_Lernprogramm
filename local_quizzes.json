@@ -1,0 +1,188 @@
+{
+  "math": [
+    {
+      "text": "\\text{Grenzwert von } \\frac{1}{x} \\text{ wenn } x \\text{ gegen Unendlich geht}",
+      "options": ["0", "Unendlich", "1", "-Unendlich"],
+      "correctIndex": 0,
+      "category": "math"
+    },
+    {
+      "text": "\\text{Ableitung von } x^2",
+      "options": ["2x", "x", "x^3", "1"],
+      "correctIndex": 0,
+      "category": "math"
+    },
+    {
+      "text": "\\text{Das Integral von } \\sin(x)",
+      "options": ["-cos(x)", "cos(x)", "sin(x)", "tan(x)"],
+      "correctIndex": 0,
+      "category": "math"
+    },
+    {
+      "text": "\\text{Fläche eines Kreises mit Radius } r",
+      "options": ["\\pi r^2", "2\\pi r", "\\pi r", "r^2"],
+      "correctIndex": 0,
+      "category": "math"
+    },
+    {
+      "text": "\\text{Wie groß ist die Winkelsumme eines Dreiecks?}",
+      "options": ["180 Grad", "90 Grad", "360 Grad", "270 Grad"],
+      "correctIndex": 0,
+      "category": "math"
+    },
+    {
+      "text": "\\text{Was ist 7 Fakultät (7!)?}",
+      "options": ["5040", "720", "120", "40320"],
+      "correctIndex": 0,
+      "category": "math"
+    },
+    {
+      "text": "\\text{Was ist die Ableitung von } e^x?",
+      "options": ["e^x", "x·e^x", "1/e^x", "0"],
+      "correctIndex": 0,
+      "category": "math"
+    },
+    {
+      "text": "\\text{Löse nach } x: x^2 - 4x + 4 = 0",
+      "options": ["2", "4", "1", "0"],
+      "correctIndex": 0,
+      "category": "math"
+    },
+    {
+      "text": "\\text{Was ist das Verhältnis der Folge } 2, 4, 8, 16, \\dots?",
+      "options": ["2", "4", "8", "16"],
+      "correctIndex": 0,
+      "category": "math"
+    },
+    {
+      "text": "\\text{Was ist die Quadratwurzel von 144?}",
+      "options": ["12", "14", "16", "10"],
+      "correctIndex": 0,
+      "category": "math"
+    }
+  ],
+  "tech": [
+    {
+      "text": "Welche Authentifizierung bietet HTTP?",
+      "options": ["Digest Access Authentication", "Einmalpasswort", "OAuth", "Zwei-Faktor-Authentifizierung"],
+      "correctIndex": 0,
+      "category": "tech"
+    },
+    {
+      "text": "Wofür ist das TCP/IP-Modell gedacht?",
+      "options": ["Netzwerkkommunikation", "Webseitenanzeige", "Datenspeicherung", "Keine der Antworten"],
+      "correctIndex": 0,
+      "category": "tech"
+    },
+    {
+      "text": "Wofür steht SSL?",
+      "options": ["Secure Sockets Layer", "Sicheres System-Login", "Socket Security Layer", "Keine der Antworten"],
+      "correctIndex": 0,
+      "category": "tech"
+    },
+    {
+      "text": "Welches Protokoll wird zum Senden von E-Mails verwendet?",
+      "options": ["SMTP", "HTTP", "FTP", "IMAP"],
+      "correctIndex": 0,
+      "category": "tech"
+    },
+    {
+      "text": "Was ist Cloud Computing?",
+      "options": ["Datendienste über das Internet", "Lokale Datenspeicherung", "Desktop-Computing", "Keine der Antworten"],
+      "correctIndex": 0,
+      "category": "tech"
+    },
+    {
+      "text": "Wofür steht IP?",
+      "options": ["Internetprotokoll", "Internes Protokoll", "Interface-Protokoll", "Internationales Protokoll"],
+      "correctIndex": 0,
+      "category": "tech"
+    },
+    {
+      "text": "Auf welcher OSI-Schicht arbeitet HTTPS?",
+      "options": ["Anwendungsschicht", "Darstellungsschicht", "Sitzungsschicht", "Transportschicht"],
+      "correctIndex": 0,
+      "category": "tech"
+    },
+    {
+      "text": "Welches Gerät verbindet dein Netzwerk mit dem Internet?",
+      "options": ["Router", "Switch", "Hub", "Repeater"],
+      "correctIndex": 0,
+      "category": "tech"
+    },
+    {
+      "text": "Wofür wird der Befehl 'ping' verwendet?",
+      "options": ["Test der Netzwerkverbindung", "Textdateien bearbeiten", "Dateien komprimieren", "Keine der Antworten"],
+      "correctIndex": 0,
+      "category": "tech"
+    },
+    {
+      "text": "Welches Betriebssystem ist Open Source?",
+      "options": ["Linux", "Windows", "MacOS", "Keines der Antworten"],
+      "correctIndex": 0,
+      "category": "tech"
+    }
+  ],
+  "general": [
+    {
+      "text": "Geburtsjahr von Karl dem Großen?",
+      "options": ["747", "828", "650", "1150"],
+      "correctIndex": 0,
+      "category": "general"
+    },
+    {
+      "text": "Wer malte die Mona Lisa?",
+      "options": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet"],
+      "correctIndex": 0,
+      "category": "general"
+    },
+    {
+      "text": "Was ist die Hauptstadt von Italien?",
+      "options": ["Rom", "Mailand", "Neapel", "Turin"],
+      "correctIndex": 0,
+      "category": "general"
+    },
+    {
+      "text": "Wer schrieb '1984'?",
+      "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Arthur C. Clarke"],
+      "correctIndex": 0,
+      "category": "general"
+    },
+    {
+      "text": "Welches Gas nehmen Pflanzen aus der Luft auf?",
+      "options": ["Kohlenstoffdioxid", "Sauerstoff", "Stickstoff", "Wasserstoff"],
+      "correctIndex": 0,
+      "category": "general"
+    },
+    {
+      "text": "Wer entdeckte Penicillin?",
+      "options": ["Alexander Fleming", "Marie Curie", "Isaac Newton", "Albert Einstein"],
+      "correctIndex": 0,
+      "category": "general"
+    },
+    {
+      "text": "Was ist der härteste natürliche Stoff auf der Erde?",
+      "options": ["Diamant", "Gold", "Eisen", "Quarz"],
+      "correctIndex": 0,
+      "category": "general"
+    },
+    {
+      "text": "Welcher Planet ist der Sonne am nächsten?",
+      "options": ["Merkur", "Venus", "Erde", "Mars"],
+      "correctIndex": 0,
+      "category": "general"
+    },
+    {
+      "text": "Welcher ist der größte Ozean der Erde?",
+      "options": ["Pazifik", "Atlantik", "Indischer Ozean", "Arktischer Ozean"],
+      "correctIndex": 0,
+      "category": "general"
+    },
+    {
+      "text": "Wer gilt als Vater der modernen Physik?",
+      "options": ["Albert Einstein", "Isaac Newton", "Nikola Tesla", "Galileo Galilei"],
+      "correctIndex": 0,
+      "category": "general"
+    }
+  ]
+}

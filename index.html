@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- =======================
+         Meta-Informationen & Titel
+    ======================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernprogramm IT-Beleg</title>
+
+    <!-- =======================
+         CSS-Dateien und Manifest
+    ======================= -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+
+    <!-- =======================
+         KaTeX für Mathe-Formeln
+    ======================= -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body);"></script>
+
+</head>
+<body>
+    <!-- =======================
+         Kopfbereich (Überschrift)
+    ======================= -->
+    <header>
+        <h1>Lernprogramm IT-Beleg</h1>
+    </header>
+
+    <!-- =======================
+         Hauptbereich (Layout in 2 Spalten)
+    ======================= -->
+    <div class="container">
+        <!-- ==== Seitenleiste für Kategorien & Modi ==== -->
+        <div class="sidebar">
+            <h2>Quiz:</h2>
+            <form id="quizForm">
+                <!-- Quiz-Kategorien -->
+                <label><input type="radio" name="category" value="general" checked> Allgemein</label><br>
+                <label><input type="radio" name="category" value="math"> Mathe</label><br>
+                <label><input type="radio" name="category" value="tech"> Internettechnologien</label><br><br>
+
+                <!-- Modusauswahl -->
+                <label><input type="radio" name="mode" value="offline" checked> Offline</label><br>
+                <label><input type="radio" name="mode" value="online"> Online</label><br>
+            </form>
+        </div>
+
+        <!-- ==== Quiz-Inhalt ==== -->
+        <div class="content">
+            <section id="quiz-container">
+                <h2 id="question">[Fragen sollten hier laden]</h2>
+                <ul id="options"></ul>
+                <button id="submit-answer">Abgeben</button>
+                <div id="progress-bar-container">
+                    <progress id="progress-bar" value="0" max="10"></progress>
+                </div>
+            </section>
+            <div id="feedback"></div>
+            <div id="completion"></div>
+        </div>
+    </div>
+
+    <!-- =======================
+         Fußbereich
+    ======================= -->
+    <footer>
+        <p>Phil Beck</p>
+    </footer>
+
+    <!-- =======================
+         JavaScript-Module
+    ======================= -->
+    <script src="QuizModel.js"></script>
+    <script src="QuizView.js"></script>
+    <script src="QuizPresenter.js"></script>
+    <script src="main.js"></script>
+
+    <!-- =======================
+         Service Worker Registrierung
+    ======================= -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+    </script>    
+</body>
+</html>
