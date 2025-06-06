@@ -30,7 +30,7 @@ Zudem kann es 10-20s dauern bis das online Quiz startet, da erst 10 verschiedene
 npx serve
 ```
 
-4. Im Browser http://localhost:8000 aufrufen
+4. Im Browser http://localhost:3000 aufrufen
 
 ### Anwendung starten in Visual Studio Code
 
