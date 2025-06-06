@@ -26,10 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const category = getSelectedCategory();
         const mode = getSelectedMode();
 
-        // Setzt den Modus im Modell
-        model.useExternal = (mode === 'online');
+        // Nur Mathe darf Online-Modus nutzen
+        if (mode === 'online' && category !== 'math') {
+            alert("Online-Modus ist nur für die Kategorie 'Mathe' verfügbar.");
+            // Setze Modus auf Offline zurück
+            document.querySelector('input[name="mode"][value="offline"]').checked = true;
+            model.useExternal = false;
+        } else {
+            model.useExternal = (mode === 'online');
+        }
 
-        // Startet das Quiz neu
         presenter.loadQuizzes(category);
     }
 

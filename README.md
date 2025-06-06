@@ -1,54 +1,58 @@
-# Lernprogramm IT-Beleg
+# Web-basiertes Lernprogramm – Phil Beck
 
-## Projektziel
+Die Lernapp ist unter [www.informatik.htw-dresden.de/~s83754/Lernprogramm/](https://www.informatik.htw-dresden.de/~s83754/Lernprogramm/) aufrufbar.
 
-Entwicklung eines webbasierten Lernprogramms, das Quizfragen zu verschiedenen Themenbereichen (Mathematik, Internettechnologien, Allgemeinwissen) bereitstellt. Die Anwendung ist lokal und optional mit einem externen Aufgabenserver nutzbar.
+## Erfüllte Aufgaben laut Bewertungsstufen
 
-## Erfüllte Aufgaben laut Belegbeschreibung
+| Bewertungsstufe | Beschreibung                                    | Erfüllt |
+|------------------|--------------------------------------------------|:-------:|
+| **4**            | Programm funktioniert mit internen Aufgaben      | ✅      |
+| **3**            | Externer Aufgabenserver funktionsfähig           | ✅      |
+| **2**            | Kategorie Notenlernen integriert                 | ❌      |
+| **1**            | Piano-Keyboard integriert                        | ❌      |
 
-- Interaktives Quiz mit Auswertung und Fortschrittsanzeige
-- Laden von Fragen aus einer lokalen JSON-Datei
-- Option zum Umschalten auf externen Aufgabenserver (nur Mathe-Fragen)
-- Nutzung eines MVC-ähnlichen Aufbaus mit `QuizModel`, `QuizView`, `QuizPresenter`
-- Mobile-optimiertes Layout (Responsive Design mit CSS)
-- Offline-Unterstützung über Service Worker
-- Mathematische Darstellung mit KaTeX
-- Kategorien: Allgemeinwissen, Mathe, Internettechnologien
-
-## Nicht umgesetzte Erweiterungen (Bewertungsstufen)
-
-- Bewertungsstufe 2: Notenlernen (nicht implementiert)
-- Bewertungsstufe 1: Piano-Keyboard-Funktion (nicht implementiert)
-
-## Technische Umsetzung
-
-- HTML, CSS und JavaScript (Vanilla JS)
-- KaTeX zur Anzeige mathematischer Formeln
-- Service Worker zur Offline-Funktionalität
-- JSON-Datei zur Verwaltung lokaler Quizdaten
-- Klare Trennung in Model / View / Presenter
+---
 
 ## Nutzungshinweis
 
-Die Anwendung kann lokal gestartet werden, indem die Datei `index.html` im Browser geöffnet wird.  
-Im linken Bereich kann der Nutzer eine Quiz-Kategorie (Allgemein, Mathe, Internettechnologien) sowie den Modus (Offline oder Online) auswählen.  
-Bei Auswahl des Online-Modus werden Mathe-Fragen dynamisch vom Aufgabenserver der HTW Dresden geladen.  
-Nach Beantwortung von 10 Fragen wird das Quiz automatisch beendet und das Ergebnis angezeigt.
+Die Anwendung funktioniert **nicht bei direktem Öffnen der `index.html`-Datei**, da moderne Browser lokale Datei-Zugriffe (z. B. Service Worker, Fetch, KaTeX-Fonts) blockieren.
+Hinweis: Um externe Mathe-Fragen vom Aufgabenserver der HTW Dresden zu laden (Online-Modus), musst du mit dem VPN der HTW Dresden verbunden sein. 
+Zudem kann es 10-20s dauern bis das online Quiz startet, da erst 10 verschiedene Fragen gefunden werden müssen.
+
+### So startest du die Anwendung korrekt:
+
+1. Projekt herunterladen oder klonen
+2. Terminal öffnen
+3. Lokalen Webserver starten, z. B.:
+
+```bash
+# Variante mit Node.js
+npx serve
+```
+
+4. Im Browser http://localhost:8000 aufrufen
+
+### Anwendung starten in Visual Studio Code
+
+Durch die Erweiterung Live Server möglich
+
 
 ## Getestete Browser
 
 - Google Chrome (aktuelle Version)
+- Mozilla Firefox: Diese Anwendung ist mit Firefox nur eingeschränkt oder gar nicht nutzbar – insbesondere funktionieren Offline-Modus, mathematische Darstellung (KaTeX-Fonts) und PWA-Installation nicht korrekt.
+- Safari (aktuelle Version)
 
 
-## Probleme / Herausforderungen
+## Mögliche Verbesserungen
 
-- Zugriff auf den externen Aufgabenserver nur mit HTTP Basic Auth (fest im Code integriert)
-- Begrenzung des Online-Modus auf Mathefragen
-- Unvollständige oder unpassende externe Fragen – Filterung durch Schlagwortprüfung implementiert
+- Erweiterung von Kategorien Notenlernen
+- Piano-Keyboard integrieren
+- Statisik für falsche fragen (Detailierte Statistiken)
+- Internettechnologien und Allgemein online fragen hinzufügen
 
 ## Quellen und Hilfsmittel
 
 - Skripte, Übungen sowie Hinweise aus IT, Stack Overflow, ChatGPT
-
 
 
