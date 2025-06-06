@@ -1,3 +1,4 @@
+"use strict";
 // Name des Cache-Speichers
 const CACHE_NAME = 'quiz-learning-app-cache-v1';
 

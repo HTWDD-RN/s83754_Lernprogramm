@@ -46,5 +46,9 @@ Nach Beantwortung von 10 Fragen wird das Quiz automatisch beendet und das Ergebn
 - Begrenzung des Online-Modus auf Mathefragen
 - Unvollständige oder unpassende externe Fragen – Filterung durch Schlagwortprüfung implementiert
 
+## Quellen und Hilfsmittel
+
+- Skripte, Übungen sowie Hinweise aus IT, Stack Overflow, ChatGPT
+
 
 

@@ -1,3 +1,4 @@
+"use strict";
 // QuizView: Steuert die Anzeige im Browser
 // =======================
 class QuizView {

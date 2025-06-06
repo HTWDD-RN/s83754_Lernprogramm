@@ -1,3 +1,5 @@
+"use strict";
+
 // QuizModel: Datenlogik
 // =======================
 class QuizModel {
@@ -18,67 +20,76 @@ class QuizModel {
 
     // Quizdaten laden
     // =======================
-    async fetchQuizzes(category) {
-        if (this.useExternal) {
-            // Nur Mathefragen sind extern erlaubt
-            if (category !== 'math') {
-                alert("Im Online-Modus sind nur Mathe-Fragen verfügbar.");
-                this.quizzes = [];
-                return;
-            }
+    // Quizdaten laden
+// =======================
+async fetchQuizzes(category) {
+    if (this.useExternal) {
+        if (category !== 'math') {
+            alert("Im Online-Modus sind nur Mathe-Fragen verfügbar.");
+            this.quizzes = [];
+            return;
+        }
 
-            const quizzes = [];
-            const maxTries = 200;
-            let tries = 0;
+        const quizzes = [];
+        const maxTries = 200;
+        let tries = 0;
 
-            // Versuche, bis zu 10 passende externe Fragen zu laden
-            while (quizzes.length < 10 && tries < maxTries) {
-                const randomId = this.generateRandomIds(2, 222, 1)[0];
-                const url = `https://idefix.informatik.htw-dresden.de:8888/api/quizzes/${randomId}`;
-                try {
-                    const response = await fetch(url, {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': 'Basic ' + btoa('test@gmail.com:secret')
-                        }
-                    });
-                    if (response.ok) {
-                        const quiz = await response.json();
-                        console.log(`Versuch ${tries + 1}: Frage geladen ->`, quiz.text);
-                        console.log("Kategorie passt:", matches);
+        while (quizzes.length < 10 && tries < maxTries) {
+            const randomId = this.generateRandomIds(2, 222, 1)[0];
+            const url = `https://idefix.informatik.htw-dresden.de:8888/api/quizzes/${randomId}`;
 
-                        if (matches) {
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Basic ' + btoa('test@gmail.com:secret')
+                    }
+                });
+
+                if (response.ok) {
+                    const quiz = await response.json();
+
+                    if (quiz && quiz.text && quiz.options && typeof quiz.correctIndex === "number") {
+                        const isMatch = this.isMatchingCategory(quiz, category);
+                        if (isMatch) {
                             quiz.category = category;
                             this.shuffleOptions(quiz);
                             quizzes.push(quiz);
+                            console.log(`✔️ Quiz hinzugefügt (ID ${randomId}): ${quiz.text}`);
+                        } else {
+                            console.log(`✖️ Nicht passend: ${quiz.text}`);
                         }
+                    } else {
+                        console.warn("⚠️ Ungültiges Quizformat:", quiz);
                     }
-                } catch (e) {
-                    console.error('Fehler beim Laden:', e);
                 }
-                tries++;
+            } catch (e) {
+                console.error('Fehler beim Laden:', e);
             }
 
-            this.quizzes = quizzes;
-
-            if (this.quizzes.length === 0) {
-                alert("Es konnten keine passenden Mathe-Fragen vom Server geladen werden.");
-                console.warn("Keine passenden Online-Fragen zur Kategorie 'math' gefunden.");
-            }
-        } else {
-            // Lokaler Modus: lade aus local_quizzes.json
-            const response = await fetch('./local_quizzes.json');
-            const data = await response.json();
-            const raw = data[category] || [];
-            this.quizzes = this.shuffleArray(raw);
-            this.quizzes.forEach(quiz => {
-                this.shuffleOptions(quiz);
-            });
+            tries++;
         }
 
-        // Quiz zurücksetzen
-        this.reset();
+        this.quizzes = quizzes;
+
+        if (this.quizzes.length === 0) {
+            alert("Es konnten keine passenden Mathe-Fragen vom Server geladen werden.");
+            console.warn("Keine passenden Online-Fragen zur Kategorie 'math' gefunden.");
+        }
+    } else {
+        const response = await fetch('./local_quizzes.json');
+        const data = await response.json();
+        const raw = data[category] || [];
+        this.quizzes = this.shuffleArray(raw);
+        this.quizzes.forEach(quiz => {
+            this.shuffleOptions(quiz);
+        });
     }
+
+    this.reset();
+}
+
+
 
     // Kategorietest (für extern geladene Fragen)
     // =======================

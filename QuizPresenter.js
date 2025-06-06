@@ -1,4 +1,4 @@
-
+"use strict";
 // QuizPresenter: verbindet Model und View
 // =======================
 class QuizPresenter {
